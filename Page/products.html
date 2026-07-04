@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products · Agwan Traders</title>
+    <meta name="description" content="Browse our complete range of electrical components – breakers, stabilizers, UPS, wires, and more." />
+    <link rel="icon" href="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+        .filter-bar-custom { display: flex; gap: var(--s-sm); justify-content: center; margin-bottom: var(--s-2xl); flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div id="scrollProgress"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../home.html" class="nav-brand">
+                <div class="brand-icon"><img src="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg"></div>
+                <div class="brand-text">
+                    <h1>Agwan Traders</h1>
+                    <span>Shop · Repair · Service</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a href="tel:+923127673765" class="phone-number">
+                    <i class="fas fa-phone"></i><span>0312-7673765</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="featured-products" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Our Collection</span>
+                <h2>All <span class="highlight">Electricals</span></h2>
+                <p>Browse our complete range of electrical components</p>
+            </div>
+
+            <div class="filter-bar-custom">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="new">New</button>
+                <button class="filter-btn" data-filter="used">Used</button>
+                <button class="filter-btn" data-filter="refurbished">Refurbished</button>
+                <button class="filter-btn" data-filter="breakers">Breakers</button>
+                <button class="filter-btn" data-filter="stabilizers">Stabilizers</button>
+                <button class="filter-btn" data-filter="ups">UPS</button>
+                <button class="filter-btn" data-filter="wires">Wires</button>
+                <button class="filter-btn" data-filter="protection">Protection</button>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Agwan Traders</h3>
+                    <p>Your trusted electrical store and repair centre in Regal Market, Karachi.</p>
+                    <div class="footer-contact">
+                        <a href="tel:+923127673765"><i class="fas fa-phone"></i> 0312-7673765</a>
+                        <a href="https://wa.me/923127673765"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../home.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?filter=breakers">Breakers</a></li>
+                        <li><a href="products.html?filter=stabilizers">Stabilizers</a></li>
+                        <li><a href="products.html?filter=ups">UPS</a></li>
+                        <li><a href="products.html?filter=wires">Wires</a></li>
+                        <li><a href="products.html?filter=protection">Protection</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Brands</h4>
+                    <ul>
+                        <li><a href="products.html">Schneider</a></li>
+                        <li><a href="products.html">Philips</a></li>
+                        <li><a href="products.html">Orient</a></li>
+                        <li><a href="products.html">GFC</a></li>
+                        <li><a href="products.html">Pel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agwan Traders. All rights reserved.</p>
+                <div class="footer-credits">
+                    <span>built by</span>
+                    <a href="https://instagram.com/___dnd.___" target="_blank" rel="noopener">@___dnd.___</a>
+                    <span class="credit-dot">·</span>
+                    <a href="mailto:muhammedyassa2@gmail.com">muhammedyassa2@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923127673765" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923127673765" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-product-image"></div>
+            <div class="modal-product-brand"></div>
+            <h3 class="modal-product-name"></h3>
+            <div class="modal-product-price"></div>
+            <p class="modal-product-desc"></p>
+            <div class="modal-specs"></div>
+            <div class="modal-actions">
+                <a href="#" class="btn btn-whatsapp btn-lg modal-whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> Inquire on WhatsApp
+                </a>
+                <a href="tel:+923127673765" class="btn btn-primary btn-lg">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

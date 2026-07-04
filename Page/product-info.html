@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details · Agwan Traders</title>
+    <link rel="icon" href="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+        .product-detail { padding: 120px 0 var(--s-4xl); }
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--s-4xl);
+            align-items: start;
+        }
+        .product-gallery-main {
+            background: var(--bg-card);
+            border: 1px solid var(--b-lo);
+            border-radius: var(--r-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+        .product-gallery-thumbs {
+            display: flex;
+            gap: var(--s-sm);
+            margin-top: var(--s-md);
+        }
+        .gallery-thumb {
+            width: 72px;
+            height: 54px;
+            background: var(--bg-card);
+            border: 1px solid var(--b-lo);
+            border-radius: var(--r-sm);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--dur-fast);
+        }
+        .gallery-thumb:hover, .gallery-thumb.active { border-color: var(--accent); }
+        .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info-detail h2 {
+            font-family: var(--f-head);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--t-100);
+            letter-spacing: -0.8px;
+            margin-bottom: var(--s-xs);
+        }
+        .product-price-large {
+            font-family: var(--f-head);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--t-100);
+            margin: var(--s-md) 0;
+            letter-spacing: -0.5px;
+        }
+        .product-price-large small { font-size: 0.75rem; color: var(--t-400); font-weight: 400; }
+        .specs-grid-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--s-sm);
+            margin: var(--s-lg) 0;
+        }
+        .spec-item-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--s-sm);
+            padding: var(--s-sm);
+            background: rgba(255,255,255,0.015);
+            border: 1px solid var(--b-lo);
+            border-radius: var(--r-sm);
+        }
+        .spec-item-detail i { color: var(--accent); width: 14px; margin-top: 2px; flex-shrink: 0; }
+        .spec-item-detail .spec-label {
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--t-400);
+            margin-bottom: 1px;
+        }
+        .spec-item-detail .spec-value { font-size: 0.8rem; font-weight: 600; color: var(--t-200); }
+        .condition-box {
+            background: var(--accent-dim);
+            border: 1px solid var(--b-accent);
+            border-radius: var(--r-md);
+            padding: var(--s-md);
+            margin: var(--s-lg) 0;
+            font-size: 0.82rem;
+            color: var(--t-200);
+            display: flex;
+            align-items: center;
+            gap: var(--s-sm);
+        }
+        .condition-box i { color: var(--accent); font-size: 1rem; }
+        .not-found { padding: var(--s-4xl) 0; text-align: center; }
+        .badge-new { background: rgba(76,175,80,0.12); color: #4CAF50; border: 1px solid rgba(76,175,80,0.2); }
+        .badge-used { background: rgba(255,107,74,0.1); color: #FF6B4A; border: 1px solid rgba(255,107,74,0.15); }
+        .badge-refurbished { background: rgba(255,218,185,0.12); color: #D48C6A; border: 1px solid rgba(255,218,185,0.2); }
+        @media (max-width: 1024px) {
+            .product-detail-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .specs-grid-detail { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div id="scrollProgress"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../home.html" class="nav-brand">
+                <div class="brand-icon"><img src="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg"></div>
+                <div class="brand-text">
+                    <h1>Agwan Traders</h1>
+                    <span>Shop · Repair · Service</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a href="tel:+923237284123" class="phone-number">
+                    <i class="fas fa-phone"></i><span>0323-7284123</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="productDetail"></main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Agwan Traders</h3>
+                    <p>Your trusted electrical store and repair centre in Regal Market, Karachi.</p>
+                    <div class="footer-contact">
+                        <a href="tel:+923237284123"><i class="fas fa-phone"></i> 0323-7284123</a>
+                        <a href="https://wa.me/923237284123"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../home.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?filter=breakers">Breakers</a></li>
+                        <li><a href="products.html?filter=stabilizers">Stabilizers</a></li>
+                        <li><a href="products.html?filter=ups">UPS</a></li>
+                        <li><a href="products.html?filter=wires">Wires</a></li>
+                        <li><a href="products.html?filter=protection">Protection</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Brands</h4>
+                    <ul>
+                        <li><a href="products.html">Schneider</a></li>
+                        <li><a href="products.html">Philips</a></li>
+                        <li><a href="products.html">Orient</a></li>
+                        <li><a href="products.html">GFC</a></li>
+                        <li><a href="products.html">Pel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agwan Traders. All rights reserved.</p>
+                <div class="footer-credits">
+                    <span>built by</span>
+                    <a href="https://instagram.com/___dnd.___" target="_blank" rel="noopener">@___dnd.___</a>
+                    <span class="credit-dot">·</span>
+                    <a href="mailto:muhammedyassa2@gmail.com">muhammedyassa2@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923237284123" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923237284123" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

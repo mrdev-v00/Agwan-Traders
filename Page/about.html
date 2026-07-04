@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About · Agwan Traders</title>
+    <meta name="description" content="Learn about Agwan Traders – your trusted electrical store and repair centre in Regal Market, Karachi since 2010." />
+    <link rel="icon" href="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--b-lo);
+            border-radius: var(--r-xl);
+            padding: var(--s-2xl);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-brands {
+            display: flex; flex-wrap: wrap; gap: var(--s-sm);
+            margin: var(--s-lg) 0;
+        }
+        .about-divider { border: none; border-top: 1px solid var(--b-lo); margin: var(--s-xl) 0; }
+        .visit-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: var(--s-lg);
+        }
+        @media (max-width: 600px) {
+            .visit-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div id="scrollProgress"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../home.html" class="nav-brand">
+                <div class="brand-icon"><img src="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg"></div>
+                <div class="brand-text">
+                    <h1>Agwan Traders</h1>
+                    <span>Shop · Repair · Service</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a href="tel:+923127673765" class="phone-number">
+                    <i class="fas fa-phone"></i><span>0312-7673765</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: 120px 0 var(--s-4xl);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">About Us</span>
+                <h2>Who <span class="highlight">We Are</span></h2>
+                <p>Your trusted electrical store in Karachi since 2010</p>
+            </div>
+
+            <div class="about-card reveal">
+                <h3 style="font-family: var(--f-head); font-size: 1.8rem; font-weight: 800; color: var(--t-100); margin-bottom: var(--s-md); letter-spacing: -0.5px;">
+                    Welcome to Agwan Traders
+                </h3>
+                <p style="color: var(--t-300); line-height: 1.8; margin-bottom: var(--s-lg);">
+                    Agwan Traders is a trusted electrical goods store located at <strong>First Floor, Regal Market, Karachi</strong>. Since 2010, we have been providing quality home appliances, lighting, and electrical accessories to customers across Karachi.
+                </p>
+                <p style="color: var(--t-300); line-height: 1.8; margin-bottom: var(--s-lg);">
+                    We specialize in products from leading brands including <strong>Dawlance, Haier, Orient, GFC, Pel, Philips, and Schneider</strong>. Our commitment to genuine products, competitive pricing, and after‑sales support has made us a preferred choice in Regal Market.
+                </p>
+                <p style="color: var(--t-300); line-height: 1.8; margin-bottom: var(--s-lg);">
+                    In addition to sales, we offer <strong>expert repair services</strong> for ACs, refrigerators, washing machines, TVs, and more. Our skilled technicians ensure quick and reliable fixes.
+                </p>
+
+                <hr class="about-divider" />
+
+                <h4 style="font-family: var(--f-head); font-size: 1.3rem; font-weight: 700; margin-bottom: var(--s-md); color: var(--t-100);">
+                    Our Brands
+                </h4>
+                <div class="about-brands">
+                    <span class="brand-pill"><i class="fas fa-snowflake"></i> Dawlance</span>
+                    <span class="brand-pill"><i class="fas fa-ice-cream"></i> Haier</span>
+                    <span class="brand-pill"><i class="fas fa-fan"></i> Orient</span>
+                    <span class="brand-pill"><i class="fas fa-tint"></i> GFC</span>
+                    <span class="brand-pill"><i class="fas fa-tv"></i> Pel</span>
+                    <span class="brand-pill"><i class="fas fa-lightbulb"></i> Philips</span>
+                    <span class="brand-pill"><i class="fas fa-plug"></i> Schneider</span>
+                </div>
+
+                <hr class="about-divider" />
+
+                <h4 style="font-family: var(--f-head); font-size: 1.3rem; font-weight: 700; margin-bottom: var(--s-md); color: var(--t-100);">
+                    Visit Our Store
+                </h4>
+                <div class="visit-grid">
+                    <div>
+                        <p style="font-weight: 600; color: var(--t-200); margin-bottom: var(--s-xs);">
+                            <i class="fas fa-location-dot" style="color: var(--accent); width: 20px;"></i> Address
+                        </p>
+                        <p style="color: var(--t-300);">F-112, First Floor, Regal Trade Square<br>Regal Chowk, Saddar, Karachi</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; color: var(--t-200); margin-bottom: var(--s-xs);">
+                            <i class="fas fa-clock" style="color: var(--accent); width: 20px;"></i> Hours
+                        </p>
+                        <p style="color: var(--t-300);">Mon – Sat: 11:00 AM – 9:00 PM<br />Sunday: Closed</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; color: var(--t-200); margin-bottom: var(--s-xs);">
+                            <i class="fas fa-phone" style="color: var(--accent); width: 20px;"></i> Phone
+                        </p>
+                        <p style="color: var(--t-300);">0312-7673765</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; color: var(--t-200); margin-bottom: var(--s-xs);">
+                            <i class="fab fa-whatsapp" style="color: var(--accent); width: 20px;"></i> WhatsApp
+                        </p>
+                        <p style="color: var(--t-300);">0312-7673765</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--s-xl); text-align: center;">
+                    <a href="https://wa.me/923127673765" class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="store-info">
+        <div class="container">
+            <div class="store-info-grid">
+                <div>
+                    <h2>Find Us in Regal Market</h2>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+                        <div class="info-text"><h4>Address</h4><p>F-112, First Floor, Regal Trade Square<br>Regal Chowk, Saddar, Karachi</p></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-text"><h4>Business Hours</h4><p>Monday – Saturday: 11:00 AM – 9:00 PM<br />Sunday: Closed</p></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-text"><h4>Contact</h4><p>0312-7673765</p></div>
+                    </div>
+                </div>
+                <div class="store-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map" style="font-size: 3rem; opacity: 0.3;"></i>
+                        <span style="opacity: 0.3;">F-112, First Floor, Regal Trade Square<br>Regal Chowk, Saddar, Karachi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Agwan Traders</h3>
+                    <p>Your trusted electrical store and repair centre in Regal Market, Karachi.</p>
+                    <div class="footer-contact">
+                        <a href="tel:+923127673765"><i class="fas fa-phone"></i> 0312-7673765</a>
+                        <a href="https://wa.me/923127673765"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../home.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?filter=ac">ACs</a></li>
+                        <li><a href="products.html?filter=fridge">Fridges</a></li>
+                        <li><a href="products.html?filter=washing">Washing Machines</a></li>
+                        <li><a href="products.html?filter=lighting">Lighting</a></li>
+                        <li><a href="products.html?filter=fans">Fans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Brands</h4>
+                    <ul>
+                        <li><a href="products.html">Dawlance</a></li>
+                        <li><a href="products.html">Haier</a></li>
+                        <li><a href="products.html">Orient</a></li>
+                        <li><a href="products.html">GFC</a></li>
+                        <li><a href="products.html">Pel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agwan Traders. All rights reserved.</p>
+                <div class="footer-credits">
+                    <span>built by</span>
+                    <a href="https://instagram.com/___dnd.___" target="_blank" rel="noopener">@___dnd.___</a>
+                    <span class="credit-dot">·</span>
+                    <a href="mailto:muhammedyassa2@gmail.com">muhammedyassa2@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923127673765" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923127673765" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
