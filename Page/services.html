@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repair Services · Agwan Traders</title>
+    <meta name="description" content="Expert repair services for ACs, refrigerators, washing machines, TVs and more in Karachi." />
+    <link rel="icon" href="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: var(--s-lg);
+            margin-top: var(--s-2xl);
+        }
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--b-lo);
+            border-radius: var(--r-lg);
+            padding: var(--s-xl);
+            text-align: center;
+            transition: all var(--dur-med) var(--ease-out);
+        }
+        .service-card:hover {
+            border-color: var(--b-mid);
+            transform: translateY(-4px);
+            box-shadow: var(--sh-md);
+        }
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: var(--s-md);
+            display: block;
+        }
+        .service-card h3 {
+            font-family: var(--f-head);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--t-100);
+            margin-bottom: var(--s-sm);
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--t-300);
+            line-height: 1.6;
+        }
+        .service-card .service-price {
+            margin-top: var(--s-md);
+            font-weight: 600;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div id="scrollProgress"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../home.html" class="nav-brand">
+                <div class="brand-icon"><img src="../assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg"></div>
+                <div class="brand-text">
+                    <h1>Agwan Traders</h1>
+                    <span>Shop · Repair · Service</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a href="tel:+923127673765" class="phone-number">
+                    <i class="fas fa-phone"></i><span>0312-7673765</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="featured-products" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Our Services</span>
+                <h2>Expert <span class="highlight">Repair</span> &amp; Maintenance</h2>
+                <p>Professional repair services for all major home appliances</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card reveal">
+                    <span class="service-icon"><i class="fas fa-snowflake"></i></span>
+                    <h3>AC Repair</h3>
+                    <p>Split, window and inverter AC service – gas refill, compressor repair, PCB fixing.</p>
+                    <div class="service-price">Starting from PKR 1,500</div>
+                </div>
+                <div class="service-card reveal reveal-delay-1">
+                    <span class="service-icon"><i class="fas fa-ice-cream"></i></span>
+                    <h3>Refrigerator Repair</h3>
+                    <p>Fridge cooling issues, gas leakage, thermostat replacement, compressor repair.</p>
+                    <div class="service-price">Starting from PKR 1,200</div>
+                </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <span class="service-icon"><i class="fas fa-tint"></i></span>
+                    <h3>Washing Machine Repair</h3>
+                    <p>Top‑load, front‑load & semi‑automatic – motor, drum, control board issues.</p>
+                    <div class="service-price">Starting from PKR 1,000</div>
+                </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <span class="service-icon"><i class="fas fa-tv"></i></span>
+                    <h3>TV &amp; Display Repair</h3>
+                    <p>LED, LCD, OLED screen repairs, power supply and motherboard fixes.</p>
+                    <div class="service-price">Starting from PKR 1,500</div>
+                </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <span class="service-icon"><i class="fas fa-micro"></i></span>
+                    <h3>Microwave Repair</h3>
+                    <p>Magnetron, capacitor, transformer, and door switch replacement.</p>
+                    <div class="service-price">Starting from PKR 800</div>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon"><i class="fas fa-plug"></i></span>
+                    <h3>Electrical Wiring</h3>
+                    <p>Full house wiring, switchboard installation, circuit breaker replacement.</p>
+                    <div class="service-price">Call for estimate</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--s-3xl);">
+                <a href="https://wa.me/923127673765" class="btn btn-whatsapp btn-lg">
+                    <i class="fab fa-whatsapp"></i> Book a Repair on WhatsApp
+                </a>
+                <p style="color: var(--t-400); margin-top: var(--s-md); font-size: 0.85rem;">
+                    Same‑day service available in most areas of Karachi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Agwan Traders</h3>
+                    <p>Your trusted electrical store and repair centre in Regal Market, Karachi.</p>
+                    <div class="footer-contact">
+                        <a href="tel:+923127673765"><i class="fas fa-phone"></i> 0312-7673765</a>
+                        <a href="https://wa.me/923127673765"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../home.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?filter=ac">ACs</a></li>
+                        <li><a href="products.html?filter=fridge">Fridges</a></li>
+                        <li><a href="products.html?filter=washing">Washing Machines</a></li>
+                        <li><a href="products.html?filter=lighting">Lighting</a></li>
+                        <li><a href="products.html?filter=fans">Fans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Brands</h4>
+                    <ul>
+                        <li><a href="products.html">Dawlance</a></li>
+                        <li><a href="products.html">Haier</a></li>
+                        <li><a href="products.html">Orient</a></li>
+                        <li><a href="products.html">GFC</a></li>
+                        <li><a href="products.html">Pel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agwan Traders. All rights reserved.</p>
+                <div class="footer-credits">
+                    <span>built by</span>
+                    <a href="https://instagram.com/___dnd.___" target="_blank" rel="noopener">@___dnd.___</a>
+                    <span class="credit-dot">·</span>
+                    <a href="mailto:muhammedyassa2@gmail.com">muhammedyassa2@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923127673765" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923127673765" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
