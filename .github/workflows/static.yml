@@ -31,13 +31,73 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      
+      - name: Create redirect index.html
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="refresh" content="0; url=home.html" />
+            <title>Redirecting to Agwan Traders...</title>
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background: #FBF7F0;
+                color: #2D2A24;
+              }
+              .loader {
+                text-align: center;
+              }
+              .loader .spinner {
+                width: 40px;
+                height: 40px;
+                margin: 0 auto 16px;
+                border: 3px solid rgba(255,107,74,0.1);
+                border-top-color: #FF6B4A;
+                border-radius: 50%;
+                animation: spin 0.8s linear infinite;
+              }
+              @keyframes spin {
+                to { transform: rotate(360deg); }
+              }
+              .loader p {
+                font-size: 0.9rem;
+                color: #6F685D;
+              }
+              .loader a {
+                color: #FF6B4A;
+                text-decoration: none;
+                font-weight: 600;
+              }
+              .loader a:hover {
+                text-decoration: underline;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="loader">
+              <div class="spinner"></div>
+              <p>Redirecting to <a href="home.html">Agwan Traders</a>...</p>
+            </div>
+          </body>
+          </html>' > index.html
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
