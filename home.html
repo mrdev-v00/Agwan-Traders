@@ -8,6 +8,86 @@
     <link rel="icon" href="assets/3fec887c-cd7c-462d-b9c3-3f077893ac58.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <style>
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto var(--s-2xl);
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            border-radius: var(--r-full);
+            border: 1px solid var(--b-mid);
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            color: var(--t-100);
+            font-size: 0.95rem;
+            font-family: var(--f-body);
+            transition: all var(--dur-fast);
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255,107,74,0.15);
+        }
+        .search-input::placeholder {
+            color: var(--t-400);
+            font-weight: 300;
+        }
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--t-400);
+            pointer-events: none;
+            font-size: 0.9rem;
+        }
+        .search-clear {
+            position: absolute;
+            right: 45px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--t-400);
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: none;
+            padding: 4px 6px;
+            border-radius: var(--r-xs);
+            transition: all var(--dur-fast);
+        }
+        .search-clear:hover {
+            color: var(--t-100);
+            background: rgba(255,255,255,0.05);
+        }
+        .search-clear.visible {
+            display: block;
+        }
+        .search-results-count {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--t-400);
+            margin-top: var(--s-sm);
+            display: none;
+        }
+        .search-results-count.visible {
+            display: block;
+        }
+        .search-results-count span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        [data-theme="dark"] .search-input {
+            background: rgba(255,255,255,0.06);
+        }
+        [data-theme="dark"] .search-input:focus {
+            background: rgba(255,255,255,0.08);
+        }
+        .mt-3 { margin-top: var(--s-2xl); }
+    </style>
 </head>
 <body>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -101,6 +181,14 @@
                 <h2>Popular <span class="highlight">Electricals</span></h2>
                 <p>Handpicked bestsellers from our catalogue</p>
             </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search products by name, brand, or category..." aria-label="Search products">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+                <span class="search-icon"><i class="fas fa-search"></i></span>
+            </div>
+            <div class="search-results-count" id="searchResultsCount">Found <span id="resultCount">0</span> products</div>
+
             <div class="product-grid" id="featuredGrid"></div>
             <div class="text-center mt-3">
                 <a href="Page/products.html" class="btn btn-primary btn-lg">
